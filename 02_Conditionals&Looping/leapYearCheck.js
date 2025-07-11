@@ -16,14 +16,13 @@ const rl = readline.createInterface({
 })
 
 rl.question("Enter the year to be checked: ", (year) => {
-    if(year % 4 == 0){
+    if(year % 4 === 0){
+       if(year % 100 !== 0 || (year % 100 === 0 && year % 400 === 0)){
         console.log("Leap Year");
-        if(year % 100 == 0){
-            console.log("Not a leap year");
-        }
-        if(year % 400 == 0){
-            console.log("Leap Year")
-        }
+       }
+       else{
+        console.log("Not a leap year");
+       }
     }
     else{
         console.log("Not a leap year");
